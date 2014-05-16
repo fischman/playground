@@ -1,0 +1,49 @@
+<html>
+<head>
+<script>
+var video;
+var canvas;
+var context2d;
+var blurringFactor = 1;
+var vw;
+var vh;
+
+function onLoaded() {
+  video = document.getElementById('v');
+  canvas = document.getElementById('c');
+  vw = video.videoWidth;
+  vh = video.videoHeight;
+  canvas.width = vw;
+  canvas.height = vh;
+  context2d = canvas.getContext('2d');
+  toggleBlur();
+  requestAnimationFrame(drawFrame);
+}
+
+function toggleBlur() {
+  if (blurringFactor != 1) {
+    blurringFactor = 1;
+  } else {
+    blurringFactor = 0.25;
+  }
+}
+
+function drawFrame() {
+  context2d.scale(blurringFactor, blurringFactor);
+  context2d.drawImage(video, 0, 0);
+  context2d.scale(1/blurringFactor, 1/blurringFactor);
+  context2d.drawImage(canvas, 0, 0, vw * blurringFactor, vh * blurringFactor, 0, 0, vw, vh);
+  requestAnimationFrame(drawFrame);
+}
+
+</script>
+</head>
+<body>
+<a href="#" onclick="toggleBlur();">Toggle Blur!</a>
+<p></p>
+<canvas id="c"></canvas>
+<video id="v" src="test-25fps.mp4" autoplay loop muted onloadeddata="onLoaded()"></video>
+<p></p>
+
+</body>
+</html>
