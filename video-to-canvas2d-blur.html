@@ -36,13 +36,14 @@ function drawFrame() {
   requestAnimationFrame(drawFrame);
 }
 
+
 </script>
 </head>
 <body>
 <a href="#" onclick="toggleBlur();">Toggle Blur!</a>
 <p></p>
-<canvas id="c"></canvas>
-<video id="v" src="test-25fps.mp4" autoplay loop muted onloadeddata="onLoaded()"></video>
+<canvas id="c" onclick="document.getElementById('c').webkitRequestFullScreen()"></canvas>
+<video id="v" src="test-25fps.mp4" autoplay loop muted onloadeddata="onLoaded()" onclick="document.getElementById('v').webkitRequestFullScreen()"></video>
 <p></p>
 
 </body>
