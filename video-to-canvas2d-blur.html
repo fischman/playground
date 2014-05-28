@@ -40,7 +40,7 @@ function drawFrame() {
 </script>
 </head>
 <body>
-<a href="#" onclick="toggleBlur();">Toggle Blur!</a>
+<a href="#" onclick="document.getElementById('v').play();">Play!</a> &nbsp; &nbsp; &nbsp; <a href="#" onclick="toggleBlur();">Toggle Blur!</a> 
 <p></p>
 <canvas id="c" onclick="document.getElementById('c').webkitRequestFullScreen()"></canvas>
 <video id="v" src="720p50_shields_ter.webm" autoplay loop muted onloadeddata="onLoaded()" onclick="document.getElementById('v').webkitRequestFullScreen()"></video>
