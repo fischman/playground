@@ -8,3 +8,4 @@ illustrates a cheesy pixelization effect by down-sampling a &lt;video&gt; to a
 &lt;canvas&gt;'s 2d context and then stretching the result back out.
 
 test-25fps.mp4 is snagged from [WebKit](http://webk.it/52697).
+720p50_shields_ter.mp4 is encoded using ffmpeg based on https://media.xiph.org/video/derf/y4m/720p50_shields_ter.y4m
