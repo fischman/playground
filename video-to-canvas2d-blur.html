@@ -11,12 +11,10 @@ var vh;
 function onLoaded() {
   video = document.getElementById('v');
   canvas = document.getElementById('c');
-  var devicePixelRatio = window.devicePixelRatio || 1;
-  vw = video.videoWidth * devicePixelRatio;
-  vh = video.videoHeight * devicePixelRatio;
+  vw = video.videoWidth;
+  vh = video.videoHeight;
   canvas.width = vw;
   canvas.height = vh;
-  canvas.style.width = window.innerWidth + "px";
   context2d = canvas.getContext('2d');
   toggleBlur();
   requestAnimationFrame(drawFrame);
