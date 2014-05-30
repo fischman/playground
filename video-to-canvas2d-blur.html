@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
 <script>
 var video;
 var canvas;
@@ -36,14 +37,17 @@ function drawFrame() {
   requestAnimationFrame(drawFrame);
 }
 
+function fullscreen() {
+  event.target.webkitRequestFullScreen();
+}
 
 </script>
 </head>
 <body>
 <a href="#" onclick="document.getElementById('v').play();">Play!</a> &nbsp; &nbsp; &nbsp; <a href="#" onclick="toggleBlur();">Toggle Blur!</a> 
 <p></p>
-<canvas id="c" onclick="document.getElementById('c').webkitRequestFullScreen()"></canvas>
-<video id="v" src="720p50_shields_ter.webm" autoplay loop muted onloadeddata="onLoaded()" onclick="document.getElementById('v').webkitRequestFullScreen()"></video>
+<canvas id="c" onclick="fullscreen()"></canvas>
+<video id="v" src="720p50_shields_ter.webm" autoplay loop muted onloadeddata="onLoaded()" onclick="fullscreen()"></video>
 <p></p>
 
 </body>
